@@ -1,0 +1,24 @@
+﻿<Window x:Class="crud.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:crud"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListView Grid.Row="0" ItemsSource ="{Binding RolesListVM.RolesList}" SelectedValue ="{Binding RolesListVM.SelectedRole}" Width="450" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Название фильма" Width="150" DisplayMemberBinding="{Binding Id_movie}" />
+                    <GridViewColumn Header="ФИО актера" Width="150" DisplayMemberBinding="{Binding Id_actor}" />
+                    <GridViewColumn Header="Роль" Width="150" DisplayMemberBinding="{Binding Name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="button" Content="Добавить" HorizontalAlignment="Left" Margin="46,120,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button1" Content="Изменить" HorizontalAlignment="Left" Margin="46,148,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Удалить" HorizontalAlignment="Left" Margin="46,176,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+        <Button x:Name="button3" Content="Обновить" HorizontalAlignment="Left" Margin="46,204,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click"/>
+    </Grid>
+</Window>
